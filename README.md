@@ -26,5 +26,5 @@ Docs
 
 
 [FreeRADIUS]:https://github.com/FreeRADIUS/freeradius-server
-[Pacparser]:http://pacparser.manugarg.com
+[Pacparser]:https://github.com/pacparser/pacparser
 [wiki]:http://wiki.github.com/mxcl/homebrew
