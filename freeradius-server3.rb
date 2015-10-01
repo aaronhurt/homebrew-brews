@@ -24,17 +24,18 @@ class FreeradiusServer3 < Formula
   depends_on "libcouchbase" => :optional # rlm_couchbase
 
   option "stable-branch", "Build from the v3.0.x stable branch"
+  option "dev-branch", "Build from the v3.1.x development branch"
 
   if build.with? "stable-branch"
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.0.x"
   end
 
-  head do
-    url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "master"
+  if build.with? "dev-branch" do
+    url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.1.x"
   end
 
-  devel do
-    url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.1.x"
+  head do
+    url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "master"
   end
 
   def install
