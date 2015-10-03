@@ -30,7 +30,7 @@ class FreeradiusServer3 < Formula
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.0.x"
   end
 
-  if build.with? "dev-branch" do
+  if build.with? "dev-branch"
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.1.x"
   end
 
