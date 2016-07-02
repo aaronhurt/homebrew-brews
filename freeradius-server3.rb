@@ -2,9 +2,9 @@ require "formula"
 
 class FreeradiusServer3 < Formula
   homepage "http://freeradius.org/"
-  url "https://github.com/FreeRADIUS/freeradius-server/archive/release_3_0_9.tar.gz"
-  sha256 "b901e027fdc0fab6d9cf794b5cfcb9d8a611bc69342d3c8aef061e36af9e30f5"
-  sha1 "67c85468668fe2679cdd8db90f9346c5d5a7b074"
+  url "https://github.com/FreeRADIUS/freeradius-server/archive/release_3_0_11.tar.gz"
+  sha256 "f0b32edb90368c3b9523e2baa792a1794d8bad662407f0d210a6c460541379b7"
+  sha1 "e2787599ccf7819bbc9245f74fa9259855e9ca20"
 
   # needs talloc and openssl
   depends_on "talloc"
