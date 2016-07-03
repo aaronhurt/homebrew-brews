@@ -4,7 +4,6 @@ class FreeradiusServer3 < Formula
   homepage "http://freeradius.org/"
   url "https://github.com/FreeRADIUS/freeradius-server/archive/release_3_0_11.tar.gz"
   sha256 "f0b32edb90368c3b9523e2baa792a1794d8bad662407f0d210a6c460541379b7"
-  sha1 "e2787599ccf7819bbc9245f74fa9259855e9ca20"
 
   # needs talloc and openssl
   depends_on "talloc"
@@ -25,6 +24,7 @@ class FreeradiusServer3 < Formula
 
   option "stable-branch", "Build from the v3.0.x stable branch"
   option "dev-branch", "Build from the v3.1.x development branch"
+  option "experimental-modules", "Build with experimental modules"
 
   if build.with? "stable-branch"
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.0.x"
@@ -57,6 +57,7 @@ class FreeradiusServer3 < Formula
     ]
 
     args << "--enable-developer" if !build.stable?
+    args << "--with-experimental-modules" if build.with? "experimental-modules"
 
     system "./configure", *args
     system "make"

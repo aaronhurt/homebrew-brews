@@ -1,5 +1,5 @@
 class ConsulBackinator < Formula
-  desc "Consul backup and restoration application using the official Consul Golang API"
+  desc "Consul backup and restoration application"
   homepage "https://github.com/myENA/consul-backinator"
   url "https://github.com/myENA/consul-backinator.git",
     :tag => "v1.0",
@@ -21,5 +21,9 @@ class ConsulBackinator < Formula
       system "./build.sh", "-i"
       bin.install "consul-backinator"
     end
+  end
+
+  test do
+    ## testing requires access consul
   end
 end
