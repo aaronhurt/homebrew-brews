@@ -20,7 +20,7 @@ class FreeradiusServer3 < Formula
   depends_on "json-c"       => :optional # rlm_rest
   depends_on "redis"        => :optional # rlm_redis, rlm_rediswho
   depends_on "ykclient"     => :optional # rlm_yubikey
-  depends_on "libcouchbase" => :optional # rlm_couchbase
+  depends_on "libcouchbase" => :optional # rlm_couchbase (experimental)
 
   option "with-v3.0.x", "Build from the v3.0.x stable branch"
   option "with-v3.1.x", "Build from the v3.1.x development branch"
