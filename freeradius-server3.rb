@@ -27,6 +27,7 @@ class FreeradiusServer3 < Formula
   option "with-v4.0.x", "Build from the v4.0.x development branch"
 
   option "with-experimental", "Build with experimental modules"
+  option "without-developer", "Disable developer mode when building from git"
 
   if build.with? "v3.0.x"
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.0.x"
@@ -62,8 +63,8 @@ class FreeradiusServer3 < Formula
       --without-rlm_securid
     ]
 
-    args << "--enable-developer" if !build.stable?
     args << "--with-experimental-modules" if build.with? "experimental"
+    args << "--disable-developer" if build.without? "developer"
 
     system "./configure", *args
     system "make"
