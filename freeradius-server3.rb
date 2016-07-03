@@ -1,5 +1,3 @@
-require "formula"
-
 class FreeradiusServer3 < Formula
   homepage "http://freeradius.org/"
   url "https://github.com/FreeRADIUS/freeradius-server/archive/release_3_0_11.tar.gz"

@@ -1,5 +1,3 @@
-require "formula"
-
 class Pacparser < Formula
   homepage "https://github.com/pacparser/pacparser"
   url "https://github.com/pacparser/pacparser/archive/1.3.6.tar.gz"
