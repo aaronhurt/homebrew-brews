@@ -22,16 +22,22 @@ class FreeradiusServer3 < Formula
   depends_on "ykclient"     => :optional # rlm_yubikey
   depends_on "libcouchbase" => :optional # rlm_couchbase
 
-  option "stable-branch", "Build from the v3.0.x stable branch"
-  option "dev-branch", "Build from the v3.1.x development branch"
-  option "experimental-modules", "Build with experimental modules"
+  option "with-v3.0.x", "Build from the v3.0.x stable branch"
+  option "with-v3.1.x", "Build from the v3.1.x development branch"
+  option "with-v4.0.x", "Build from the v4.0.x development branch"
 
-  if build.with? "stable-branch"
+  option "with-experimental", "Build with experimental modules"
+
+  if build.with? "v3.0.x"
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.0.x"
   end
 
-  if build.with? "dev-branch"
+  if build.with? "v3.1.x"
     url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v3.1.x"
+  end
+
+  if build.with? "v4.0.x"
+    url "https://github.com/FreeRADIUS/freeradius-server.git", :using => :git, :branch => "v4.0.x"
   end
 
   head do
@@ -57,7 +63,7 @@ class FreeradiusServer3 < Formula
     ]
 
     args << "--enable-developer" if !build.stable?
-    args << "--with-experimental-modules" if build.with? "experimental-modules"
+    args << "--with-experimental-modules" if build.with? "experimental"
 
     system "./configure", *args
     system "make"
