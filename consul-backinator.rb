@@ -2,8 +2,8 @@ class ConsulBackinator < Formula
   desc "Consul backup and restoration application"
   homepage "https://github.com/myENA/consul-backinator"
   url "https://github.com/myENA/consul-backinator.git",
-    :tag => "v1.0",
-    :revision => "c07989a0cf4f18d4401d6975c48513ffa7db6d5d"
+    tag: "v1.2",
+    revision: "97c3d8506f332ba86b3af922cc20adb734c81dbc"
   head "https://github.com/myENA/consul-backinator.git"
 
   depends_on "go" => :build
@@ -18,7 +18,7 @@ class ConsulBackinator < Formula
     ENV.prepend_create_path "PATH", buildpath/"bin"
 
     cd dir do
-      system "./build.sh", "-i"
+      system "make"
       bin.install "consul-backinator"
     end
   end
