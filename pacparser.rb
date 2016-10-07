@@ -22,6 +22,6 @@ class Pacparser < Formula
   end
 
   test do
-    ## testing requires pacfile
+    ## todo
   end
 end

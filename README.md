@@ -3,11 +3,15 @@ homebrew-brews
 
 Hopefully you find these as beneficial as I did when creating them.
 
-| Formulae                                    | Description                        |
-----------------------------------------------|------------------------------------|
-| [freeradius-server3](freeradius-server3.rb) | The latest [FreeRADIUS][] releases |
-| [pacparser](pacparser.rb)                   | The [Pacparser][] library          |
-| [consul-backinator](consul-backinator.rb)   | My [consul-backinator][] utility   |
+| Formulae                                     | Description                        |
+-----------------------------------------------|------------------------------------|
+| [freeradius-server3](freeradius-server3.rb)  | The latest [FreeRADIUS][] releases |
+| [pacparser](pacparser.rb)                    | The [Pacparser][] library          |
+| ~~consul-backinator~~                        | ~~My consul-backinator utility~~   |
+
+Moved to core
+-------------
+* consul-backinator
 
 How do I install these formulae?
 --------------------------------
