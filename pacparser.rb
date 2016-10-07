@@ -8,20 +8,18 @@ class Pacparser < Formula
   depends_on "python" => :optional
 
   def install
-    ENV.deparallelize
-    cd "src" do
-      system "make"
-      system "make", "install", "PREFIX=#{prefix}"
-    end
+    system "make", "-j1", "-C", "src", "install",
+           "PREFIX=#{prefix}", "VERSION=#{version}"
+
     if build.with? "python"
-      cd "src" do
-        system "make", "pymod"
-        system "make", "install-pymod", "PREFIX=#{prefix}"
-      end
+      system "make", "-j1", "-C", "src", "install-pymod",
+             "EXTRA_ARGS=\"--prefix=#{prefix}\"",
+             "VERSION=#{version}"
     end
   end
 
   test do
-    ## todo
+    ## functional tests are run as part of the make
+    assert_equal version.to_s, shell_output("#{bin}/pactester -v").strip
   end
 end
