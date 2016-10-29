@@ -6,12 +6,13 @@ Hopefully you find these as beneficial as I did when creating them.
 | Formulae                                     | Description                        |
 -----------------------------------------------|------------------------------------|
 | [freeradius-server3](freeradius-server3.rb)  | The latest [FreeRADIUS][] releases |
-| [pacparser](pacparser.rb)                    | The [Pacparser][] library          |
+| ~~pacparser~~                                | ~~Pacparser library and tester~~   |
 | ~~consul-backinator~~                        | ~~My consul-backinator utility~~   |
 
 Moved to core
 -------------
-* consul-backinator
+* [consul-backinator](https://github.com/Homebrew/homebrew-core/blob/master/Formula/consul-backinator.rb)
+* [pacparser](https://github.com/Homebrew/homebrew-core/blob/master/Formula/pacparser.rb)
 
 How do I install these formulae?
 --------------------------------
@@ -31,6 +32,4 @@ Docs
 
 
 [FreeRADIUS]:https://github.com/FreeRADIUS/freeradius-server
-[Pacparser]:https://github.com/pacparser/pacparser
-[consul-backinator]:https://github.com/myENA/consul-backinator
 [wiki]:http://wiki.github.com/mxcl/homebrew
